@@ -316,3 +316,30 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+/* Celebration mit Hintergrundbild */
+#celebration{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* Hintergrund-Ebene */
+#celebration::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("IMG_1504%202.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35;              /* Bild “hinter” dem Text */
+  filter: blur(0px);          /* optional: z.B. blur(1px) */
+  transform: scale(1.05);     /* verhindert Rand-Artefakte */
+  z-index: 0;
+}
+
+/* Text/ELEMENTE bleiben vorne lesbar */
+#celebration > *{
+  position: relative;
+  z-index: 1;
+}
